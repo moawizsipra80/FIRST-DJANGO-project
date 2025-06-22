@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME TO TEXT UTILS</title>
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style >
+
+</style>
+</head>
+<body   style="min-height: 100vh; color: blue;">   
+  
+<!-- bootstrap navbar-->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">ODM TEXT UTILS </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#analyzer">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#analyzer">ABOUT US</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<!--Botstrap end -->
+
+    <h1><b>WELCOME TO TEXT UTILS</b></h1>
+    <!-- <p>This is created by  {{name}} from {{place}} </p> -->
+<div style="width: min-content;height: auto;"> 
+    <form action="/analyzer" method="post">
+      {%csrf_token%}
+ <textarea name="text" style="width: 1227px; height: 221px;" placeholder="Enter your text"></textarea><br>
+ <div class="form-check form-switch" style="margin-left: 15px;"><br>
+        <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault" name="checkbox" value="agree">
+        <label class="form-check-label" for="switchCheckDefault">Analyze Text</label>
+       <button type="submit" class="btn btn-primary" style="margin-top:auto;">Submit</button><br>
+</div>
+</div><br>
+  </form>
+<!-- Capitalize Form  by default method hamesha get hota ha but ab main isko post karna laga hun-->
+<form action="/analyzer" method="post"> {%csrf_token%}
+  
+  <textarea 
+    name="cap_text" 
+    placeholder="Enter text to capitalize" 
+    style="width: 1227px; height: 100px;" 
+    class="form-control"
+  ></textarea>
+  <br>
+
+  <!-- Bootstrap switch -->
+  <div class="form-check form-switch" style="margin-left: 15px;">
+    <input 
+      class="form-check-input" 
+      type="checkbox" 
+      name="action" 
+      value="capatilize" 
+      role="switch" 
+      id="switchCheckDefault"
+    >
+    <label class="form-check-label" for="switchCheckDefault">Capitalize Text</label>
+   <button type="submit" class="btn btn-primary" style="margin-left: 15px;">Submit</button>
+  </div>
+  <br>
+</form>
+
+
+<!-- Extra Space Remover Form -->
+<form action="/analyzer" method="post">
+  {%csrf_token%}
+    <textarea name="text" placeholder="Enter text to remove extra spaces" style="width: 1227px; height: 100px;"></textarea><br><br>
+    <div class="form-check form-switch" style="margin-left: 15px;">
+    <input
+          class="form-check-input" 
+      type="checkbox" 
+     name="extraspaceremover"
+      value="on" 
+      role="switch" 
+      id="switchCheckDefault"
+    >
+    <label>Remove Extra Spaces</label>
+    <button type="submit" type="submit" class="btn btn-primary" style="margin-left: 15px;">Extra space remover</button>
+  </div>
+</form>
+</div>
+
+    <!-- </p> -->
+     <!-- Bootstrap JS (for dropdown, navbar, etc.) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
